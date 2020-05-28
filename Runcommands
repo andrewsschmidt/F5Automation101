@@ -1,3 +1,8 @@
- ansible-playbook ./as3-playbook.yaml
+ansible-playbook ./as3-playbook.yaml
+
 ansible-vault encrypt_string 'Autows123!!' --name 'bigip_password'
+
 ansible-playbook ./as3-playbook.yaml --ask-vault-pass
+
+
+ansible-playbook ./as3-playbook.yaml --ask-vault-pass -i inventory

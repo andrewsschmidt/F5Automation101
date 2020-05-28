@@ -1,7 +1,7 @@
 ---
 
 - name: MY AS3 PLAYBOOK
-  hosts: localhost
+  hosts: bigips
   connection: local
   gather_facts: false
 
@@ -14,7 +14,7 @@
 
   - name: ASchmidt_CreateApplication
     uri:
-      url: https://3.11.134.160/mgmt/shared/appsvcs/declare
+      url: "https://{{ inventory_hostname }}/mgmt/shared/appsvcs/declare"
       user: "{{ bigip_user }}"
       password: "{{ bigip_password }}"
       method: "{{ uri_method }}"
